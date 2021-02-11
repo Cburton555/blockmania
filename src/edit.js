@@ -11,8 +11,10 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
-
+//import { useBlockProps } from '@wordpress/block-editor';
+//import { RichText } from '@wordpress/block-editor';
+import { useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText } from '@wordpress/block-editor';
+import {SelectControl } from '@wordpress/components';
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -29,10 +31,59 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function edit() {
+export default function edit({attributes, setAttributes}) {
+//export default function edit(props) {
+	//let attributes = props.attributes;
+	//let {attributes, setAttributes} = props;
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Testimonial – hello from the editor!', 'tk-blockmania' ) }
-		</p>
+		<div { ...useBlockProps() }>
+			<SelectControl
+				label={ __( 'Select a rating:' ) }
+				value={ attributes.stars }
+				onChange={ ( stars ) => { setAttributes( { stars } ) } }
+				options={ [
+					{ value: '1', label: '*' },
+					{ value: '2', label: '**' },
+					{ value: '3', label: '***' },
+					{ value: '4', label: '****' },
+					{ value: '5', label: '*****' },
+				] }
+			/>
+
+			<RichText
+				tagName="div" // The tag here is the element output and editable in the admin
+				value={ attributes.quote } // Any existing content, either from the database or an attribute default
+				allowedFormats={ [ 'core/bold', 'core/italic' ] } // Allow the content to be made bold or italic, but do not allow other formatting options
+				onChange={ ( quote ) => setAttributes( { quote } ) } // Store updated content as a block attribute
+				placeholder="Lorem ipsum..."// Display this text before any content has been added by the user
+			/>
+
+			<div className="quote-profile">
+				<div className="photo">
+					<MediaUploadCheck>
+						<MediaUpload
+							allowedTypes={['image']}
+							onSelect={ ( img ) => setAttributes( { imgUrl: img.sizes.thumbnail.url } ) }
+							render={ ({open}) => <img src={attributes.imgUrl} onClick={open}/>}
+						/>
+					</MediaUploadCheck>
+				</div>
+				<div className="text">
+					<PlainText
+						className="author"
+						value={attributes.author}
+						onChange={ ( author ) => setAttributes( { author } ) }
+						placeholder="Eric Forman"
+						/>
+					<PlainText
+						className="location"
+						value={attributes.location}
+						onChange={ ( location ) => setAttributes( { location } ) }
+						placeholder="Point Place, WI"
+					/>
+				</div>
+			</div>
+		</div>
 	);
 }
