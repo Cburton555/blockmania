@@ -19,6 +19,7 @@ import {SelectControl, PanelBody} from '@wordpress/components';
  * Internal dependencies
  */
 import {TKColorPanel} from '../common/TKColorPanel';
+import {TKRatingSelect} from "../common/TKRatingSelect";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -27,6 +28,7 @@ import {TKColorPanel} from '../common/TKColorPanel';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -55,20 +57,15 @@ export default function edit({attributes, setAttributes}) {
 					setAttributes={setAttributes}
 					initialOpen={true}
 				/>
-				<PanelBody title="Test"></PanelBody>
+				<PanelBody title="Test">
+					<p>Some more stuff here.</p>
+				</PanelBody>
 
 			</InspectorControls>
-			<SelectControl
-				label={ __( 'Select a rating:' ) }
+
+			<TKRatingSelect
 				value={ attributes.stars }
-				onChange={ ( stars ) => { setAttributes( { stars: parseInt(stars) } ) } }
-				options={ [
-					{ value: '1', label: '*' },
-					{ value: '2', label: '**' },
-					{ value: '3', label: '***' },
-					{ value: '4', label: '****' },
-					{ value: '5', label: '*****' },
-				] }
+				onChange={ ( stars ) => { setAttributes( { stars } ) } }
 			/>
 
 			<RichText
