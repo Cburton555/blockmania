@@ -248,10 +248,33 @@ function edit(_ref) {
   //export default function edit(props) {
   //let attributes = props.attributes;
   //let {attributes, setAttributes} = props;
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
-    title: "Basic",
-    initialOpen: true
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Whatever we want.")))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["SelectControl"], {
+  var divStyles = {
+    backgroundColor: attributes.backgroundColor,
+    color: attributes.textColor
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])({
+    style: divStyles
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["PanelColorSettings"], {
+    title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Color Settings'),
+    initialOpen: true,
+    colorSettings: [{
+      value: attributes.backgroundColor,
+      onChange: function onChange(color) {
+        setAttributes({
+          backgroundColor: color
+        });
+      },
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Background Color')
+    }, {
+      value: attributes.textColor,
+      onChange: function onChange(color) {
+        setAttributes({
+          textColor: color
+        });
+      },
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Text Color')
+    }]
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["SelectControl"], {
     label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Select a rating:'),
     value: attributes.stars,
     onChange: function onChange(stars) {
@@ -457,6 +480,12 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('tk-
       type: 'string',
       source: 'text',
       selector: '.location'
+    },
+    backgroundColor: {
+      type: 'string'
+    },
+    textColor: {
+      type: 'string'
     }
   },
 
@@ -524,7 +553,13 @@ __webpack_require__.r(__webpack_exports__);
 function save(_ref) {
   var attributes = _ref.attributes;
   var starIcons = Array(5).fill('&#9733;', 0, attributes.stars).join('');
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+  var divStyles = {
+    backgroundColor: attributes.backgroundColor,
+    color: attributes.textColor
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save({
+    style: divStyles
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "stars"
   }, starIcons), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
     tagName: "div",

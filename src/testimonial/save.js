@@ -27,8 +27,13 @@ export default function save( {attributes} ) {
 		.fill('&#9733;', 0, attributes.stars)
 		.join('');
 
+	let divStyles = {
+		backgroundColor: attributes.backgroundColor,
+		color: attributes.textColor,
+	}
+
 	return (
-		<div { ...useBlockProps.save() }>
+		<div { ...useBlockProps.save({style: divStyles}) }>
 			<div className="stars">{starIcons}</div>
 			<RichText.Content tagName="div" className="quote" value={ attributes.quote } />
 			<div className="quote-profile">

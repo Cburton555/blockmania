@@ -102,6 +102,12 @@ registerBlockType( 'tk-blockmania/testimonial', {
 			source: 'text',
 			selector: '.location',
 		},
+		backgroundColor:{
+			type: 'string',
+		},
+		textColor:{
+			type: 'string',
+		},
 	},
 
 	/**
