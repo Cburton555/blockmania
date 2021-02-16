@@ -256,7 +256,7 @@ function edit(_ref) {
     value: attributes.stars,
     onChange: function onChange(stars) {
       setAttributes({
-        stars: stars
+        stars: parseInt(stars)
       });
     },
     options: [{

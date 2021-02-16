@@ -49,7 +49,7 @@ export default function edit({attributes, setAttributes}) {
 			<SelectControl
 				label={ __( 'Select a rating:' ) }
 				value={ attributes.stars }
-				onChange={ ( stars ) => { setAttributes( { stars } ) } }
+				onChange={ ( stars ) => { setAttributes( { stars: parseInt(stars) } ) } }
 				options={ [
 					{ value: '1', label: '*' },
 					{ value: '2', label: '**' },
