@@ -65,7 +65,7 @@ export default function edit({attributes, setAttributes}) {
 
 			<TKRatingSelect
 				value={ attributes.stars }
-				onChange={ ( stars ) => { setAttributes( { stars } ) } }
+				onChange={ ( stars ) => { setAttributes( { stars: parseInt(stars) } ) } }
 			/>
 
 			<RichText

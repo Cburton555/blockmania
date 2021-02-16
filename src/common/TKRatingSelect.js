@@ -9,7 +9,7 @@ export class TKRatingSelect extends React.Component {
 			<SelectControl
 				label={ __( 'Select a rating:' ) }
 				value={ this.props.value }
-				onChange={ ( rating ) => { this.props.onChange( parseInt(rating) ) } }
+				onChange={ ( rating ) => { this.props.onChange( rating ) } }
 				options={ [
 					{ value: 1, label: '*' },
 					{ value: 2, label: '**' },

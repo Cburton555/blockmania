@@ -625,7 +625,7 @@ var TKRatingSelect = /*#__PURE__*/function (_React$Component) {
         label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Select a rating:'),
         value: this.props.value,
         onChange: function onChange(rating) {
-          _this.props.onChange(parseInt(rating));
+          _this.props.onChange(rating);
         },
         options: [{
           value: 1,
