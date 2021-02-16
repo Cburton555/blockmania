@@ -11,12 +11,15 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-//import { useBlockProps } from '@wordpress/block-editor';
-//import { RichText } from '@wordpress/block-editor';
 import { useBlockProps, RichText, MediaUpload, MediaUploadCheck, PlainText,
-		InspectorControls, PanelColorSettings} from '@wordpress/block-editor';
-import {SelectControl, PanelBody, PanelRow } from '@wordpress/components';
-import {select} from '@wordpress/data';
+		InspectorControls} from '@wordpress/block-editor';
+import {SelectControl, PanelBody} from '@wordpress/components';
+
+/**
+ * Internal dependencies
+ */
+import {TKColorPanel} from '../common/TKColorPanel';
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -43,32 +46,16 @@ export default function edit({attributes, setAttributes}) {
 		color: attributes.textColor,
 	}
 
-	let settings = select('core/editor').getEditorSettings();
-	//console.log(settings);
 
 	return (
 		<div { ...useBlockProps({style: divStyles}) }>
 			<InspectorControls>
-				<PanelColorSettings
-					title={__('Color Settings')}
+				<TKColorPanel
+					attributes={attributes}
+					setAttributes={setAttributes}
 					initialOpen={true}
-					colorSettings={ [
-						{
-							value: attributes.backgroundColor,
-							onChange: (color) => {setAttributes({backgroundColor: color})},
-							label: __('Background Color'),
-						},
-						{
-							value: attributes.textColor,
-							onChange: (color) => {setAttributes({textColor: color})},
-							label: __('Text Color'),
-							colors: [
-								...settings.colors,
-								{name: 'White', slug: 'white', color: '#FFFFFF'},
-							]
-						},
-					]}
 				/>
+				<PanelBody title="Test"></PanelBody>
 
 			</InspectorControls>
 			<SelectControl
