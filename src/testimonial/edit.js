@@ -99,6 +99,12 @@ export default function edit({attributes, setAttributes}) {
 						onChange={ ( location ) => setAttributes( { location } ) }
 						placeholder="Point Place, WI"
 					/>
+					<PlainText
+						className="additional"
+						value={attributes.additional}
+						onChange={ ( additional ) => setAttributes( { additional } ) }
+						placeholder="example text"
+					/>
 				</div>
 			</div>
 		</div>

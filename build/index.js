@@ -808,6 +808,15 @@ function edit(_ref) {
       });
     },
     placeholder: "Point Place, WI"
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["PlainText"], {
+    className: "additional",
+    value: attributes.additional,
+    onChange: function onChange(additional) {
+      return setAttributes({
+        additional: additional
+      });
+    },
+    placeholder: "example text"
   }))));
 }
 
@@ -932,6 +941,11 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('tk-
       type: 'string',
       source: 'text',
       selector: '.author'
+    },
+    additional: {
+      type: 'string',
+      source: 'text',
+      selector: '.additional;'
     },
     location: {
       type: 'string',

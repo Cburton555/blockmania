@@ -97,6 +97,11 @@ registerBlockType( 'tk-blockmania/testimonial', {
 			source: 'text',
 			selector: '.author',
 		},
+		additional: {
+			type: 'string',
+			source: 'text',
+			selector: '.additional;',
+		},
 		location: {
 			type: 'string',
 			source: 'text',
