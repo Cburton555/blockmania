@@ -43,6 +43,7 @@ export default function save( {attributes} ) {
 				<div className="text">
 					<p className="author">{ attributes.author }</p>
 					<p className="location">{ attributes.location }</p>
+					<p className="additional">{ attributes.additional }</p>
 				</div>
 			</div>
 		</div>

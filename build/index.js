@@ -642,6 +642,21 @@ var TKRatingSelect = /*#__PURE__*/function (_React$Component) {
         }, {
           value: 5,
           label: '*****'
+        }, {
+          value: 6,
+          label: '******'
+        }, {
+          value: 7,
+          label: '*******'
+        }, {
+          value: 8,
+          label: '********'
+        }, {
+          value: 9,
+          label: '*********'
+        }, {
+          value: 10,
+          label: '**********'
         }]
       });
     }
@@ -1049,7 +1064,9 @@ function save(_ref) {
     className: "author"
   }, attributes.author), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
     className: "location"
-  }, attributes.location))));
+  }, attributes.location), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+    className: "additional"
+  }, attributes.additional))));
 }
 
 /***/ }),
