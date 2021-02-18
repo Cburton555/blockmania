@@ -778,7 +778,9 @@ function edit(_ref) {
     initialOpen: true
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
     title: "Test"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Some more stuff here."))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_common_TKRatingSelect__WEBPACK_IMPORTED_MODULE_5__["TKRatingSelect"], {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Some more stuff here.")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
+    title: "Background"
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_common_TKRatingSelect__WEBPACK_IMPORTED_MODULE_5__["TKRatingSelect"], {
     value: attributes.stars,
     onChange: function onChange(stars) {
       setAttributes({
@@ -824,6 +826,9 @@ function edit(_ref) {
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "text"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["PlainText"], {
+    style: {
+      backgroundColor: attributes.text
+    },
     className: "mainreview",
     value: attributes.mainreview,
     onChange: function onChange(mainreview) {

@@ -50,7 +50,9 @@ export default function edit({attributes, setAttributes}) {
 
 
 	return (
+
 		<div { ...useBlockProps({style: divStyles}) }>
+
 			<InspectorControls>
 				<TKColorPanel
 					attributes={attributes}
@@ -59,6 +61,9 @@ export default function edit({attributes, setAttributes}) {
 				/>
 				<PanelBody title="Test">
 					<p>Some more stuff here.</p>
+				</PanelBody>
+				<PanelBody title="Background">
+
 				</PanelBody>
 
 			</InspectorControls>
@@ -87,7 +92,7 @@ export default function edit({attributes, setAttributes}) {
 					</MediaUploadCheck>
 				</div>
 				<div className="text">
-					<PlainText
+					<PlainText style={{backgroundColor:attributes.text}}
 						className="mainreview"
 						value={attributes.mainreview}
 						onChange={ ( mainreview ) => setAttributes( { mainreview } ) }
@@ -117,6 +122,8 @@ export default function edit({attributes, setAttributes}) {
 
 				</div>
 			</div>
-		</div>
+			</div>
+
+
 	);
 }
