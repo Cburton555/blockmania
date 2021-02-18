@@ -555,6 +555,21 @@ var TKColorPanel = /*#__PURE__*/function (_React$Component) {
             slug: 'white',
             color: '#FFFFFF'
           }])
+        }, {
+          value: attributes.text,
+          onChange: function onChange(color) {
+            setAttributes({
+              text: color,
+              author: color,
+              location: color
+            });
+          },
+          label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Text background Color'),
+          colors: [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(settings.colors), [{
+            name: 'White',
+            slug: 'white',
+            color: '#FFFFFF'
+          }])
         }]
       });
     }
@@ -786,7 +801,10 @@ function edit(_ref) {
     placeholder: "Lorem ipsum..." // Display this text before any content has been added by the user
 
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "quote-profile"
+    className: "quote-profile",
+    style: {
+      backgroundColor: attributes.text
+    }
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "photo"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUpload"], {
@@ -806,6 +824,22 @@ function edit(_ref) {
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "text"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["PlainText"], {
+    className: "mainreview",
+    value: attributes.mainreview,
+    onChange: function onChange(mainreview) {
+      return setAttributes({
+        mainreview: mainreview
+      });
+    },
+    placeholder: "your review"
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    style: {
+      backgroundColor: attributes.text
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["PlainText"], {
+    style: {
+      backgroundColor: attributes.text
+    },
     className: "author",
     value: attributes.author,
     onChange: function onChange(author) {
@@ -815,6 +849,9 @@ function edit(_ref) {
     },
     placeholder: "Eric Forman"
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["PlainText"], {
+    style: {
+      backgroundColor: attributes.text
+    },
     className: "location",
     value: attributes.location,
     onChange: function onChange(location) {
@@ -824,6 +861,9 @@ function edit(_ref) {
     },
     placeholder: "Point Place, WI"
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["PlainText"], {
+    style: {
+      backgroundColor: attributes.text
+    },
     className: "additional",
     value: attributes.additional,
     onChange: function onChange(additional) {
@@ -967,10 +1007,18 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('tk-
       source: 'text',
       selector: '.location'
     },
+    mainreview: {
+      type: 'string',
+      source: 'text',
+      selector: '.mainreview'
+    },
     backgroundColor: {
       type: 'string'
     },
     textColor: {
+      type: 'string'
+    },
+    text: {
       type: 'string'
     }
   },
@@ -1059,14 +1107,18 @@ function save(_ref) {
     src: attributes.imgUrl,
     alt: 'Photo of _____'
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "text"
+    style: {
+      backgroundColor: attributes.text
+    }
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
     className: "author"
   }, attributes.author), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
     className: "location"
   }, attributes.location), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
     className: "additional"
-  }, attributes.additional))));
+  }, attributes.additional), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+    className: "mainreview"
+  }, attributes.mainreview))));
 }
 
 /***/ }),

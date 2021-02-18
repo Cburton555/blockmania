@@ -76,7 +76,7 @@ export default function edit({attributes, setAttributes}) {
 				placeholder="Lorem ipsum..."// Display this text before any content has been added by the user
 			/>
 
-			<div className="quote-profile">
+			<div className="quote-profile" style={{backgroundColor:attributes.text}}>
 				<div className="photo">
 					<MediaUploadCheck>
 						<MediaUpload
@@ -88,23 +88,33 @@ export default function edit({attributes, setAttributes}) {
 				</div>
 				<div className="text">
 					<PlainText
+						className="mainreview"
+						value={attributes.mainreview}
+						onChange={ ( mainreview ) => setAttributes( { mainreview } ) }
+						placeholder="your review"
+					/>
+
+				</div>
+				<div style={{backgroundColor:attributes.text}}>
+					<PlainText style={{backgroundColor:attributes.text}}
 						className="author"
 						value={attributes.author}
 						onChange={ ( author ) => setAttributes( { author } ) }
 						placeholder="Eric Forman"
 						/>
-					<PlainText
+					<PlainText style={{backgroundColor:attributes.text}}
 						className="location"
 						value={attributes.location}
 						onChange={ ( location ) => setAttributes( { location } ) }
 						placeholder="Point Place, WI"
 					/>
-					<PlainText
+					<PlainText style={{backgroundColor:attributes.text}}
 						className="additional"
 						value={attributes.additional}
 						onChange={ ( additional ) => setAttributes( { additional } ) }
 						placeholder="example text"
 					/>
+
 				</div>
 			</div>
 		</div>

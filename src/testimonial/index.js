@@ -107,13 +107,22 @@ registerBlockType( 'tk-blockmania/testimonial', {
 			source: 'text',
 			selector: '.location',
 		},
+		mainreview: {
+			type: 'string',
+			source: 'text',
+			selector: '.mainreview',
+		},
 		backgroundColor:{
 			type: 'string',
 		},
 		textColor:{
 			type: 'string',
 		},
+		text:{
+			type: 'string',
+		},
 	},
+
 
 	/**
 	 * @see ./edit.js

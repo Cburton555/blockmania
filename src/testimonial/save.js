@@ -40,10 +40,11 @@ export default function save( {attributes} ) {
 				<div className="photo">
 					<img src={attributes.imgUrl} alt={'Photo of _____'}/>
 				</div>
-				<div className="text">
+				<div style={{backgroundColor:attributes.text}}>
 					<p className="author">{ attributes.author }</p>
 					<p className="location">{ attributes.location }</p>
 					<p className="additional">{ attributes.additional }</p>
+					<p className="mainreview">{ attributes.mainreview }</p>
 				</div>
 			</div>
 		</div>

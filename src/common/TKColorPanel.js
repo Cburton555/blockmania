@@ -34,6 +34,15 @@ export class TKColorPanel extends React.Component {
 							{name: 'White', slug: 'white', color: '#FFFFFF'},
 						]
 					},
+					{
+						value: attributes.text,
+						onChange: (color) => {setAttributes({text: color , author: color ,location: color,})},
+						label: __('Text background Color'),
+						colors: [
+							...settings.colors,
+							{name: 'White', slug: 'white', color: '#FFFFFF'},
+						]
+					},
 				]}
 			/>
 		);

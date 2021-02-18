@@ -42,7 +42,7 @@
   border-radius: 50%;
   margin-right: 2em;
 }
-.wp-block-tk-blockmania-testimonial .quote-profile .author, .wp-block-tk-blockmania-testimonial .quote-profile .location, .wp-block-tk-blockmania-testimonial .quote-profile .additional {
+.wp-block-tk-blockmania-testimonial .quote-profile .author, .wp-block-tk-blockmania-testimonial .quote-profile .location, .wp-block-tk-blockmania-testimonial .quote-profile .additional, .wp-block-tk-blockmania-testimonial .quote-profile .mainreview {
   margin: 0;
   text-align: right;
   font-weight: 700;
