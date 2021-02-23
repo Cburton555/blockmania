@@ -23,7 +23,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function save( {attributes} ) {
-	let starIcons = Array(5)
+	let starIcons = Array(10)
 		.fill('&#9733;', 0, attributes.stars)
 		.join('');
 

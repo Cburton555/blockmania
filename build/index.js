@@ -1091,7 +1091,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function save(_ref) {
   var attributes = _ref.attributes;
-  var starIcons = Array(5).fill('&#9733;', 0, attributes.stars).join('');
+  var starIcons = Array(10).fill('&#9733;', 0, attributes.stars).join('');
   var divStyles = {
     backgroundColor: attributes.backgroundColor,
     color: attributes.textColor
