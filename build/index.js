@@ -541,8 +541,26 @@ var borderInspectorControls = Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE
       step: 0.5,
       min: 0.5,
       max: 5.5
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["RangeControl"], {
+      label: "Border Radius",
+      value: props.attributes.borderRadius,
+      onChange: function onChange(value) {
+        props.setAttributes({
+          borderRadius: value
+        });
+      },
+      step: 1.0,
+      min: 0.0,
+      max: 10.0
     })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["ColorPalette"], {
-      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Border Color')
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Border Color'),
+      colors: settings.colors,
+      value: props.attributes.borderColor,
+      onChange: function onChange(value) {
+        props.setAttributes({
+          borderColor: value
+        });
+      }
     })))));
   };
 }, 'borderInspectorControls');

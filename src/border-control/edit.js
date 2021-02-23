@@ -57,8 +57,34 @@ const borderInspectorControls = createHigherOrderComponent(( BlockEdit )=> {
 
                             </PanelRow>
                         <PanelRow>
+                            <RangeControl
+                                label ="Border Radius"
+                                value={props.attributes.borderRadius}
+                                onChange={ (value) => {
+                                    props.setAttributes({
+                                        borderRadius: value
+                                    })
+                                }}
+                                step={1.0}
+                                min={0.0}
+                                max={10.0}/>
+
+
+                        </PanelRow>
+
+                        <PanelRow>
                             <ColorPalette
-                                label ={__('Border Color')}/>
+                                label ={__('Border Color')}
+                                colors={ settings.colors }
+                                value={props.attributes.borderColor}
+
+                                onChange={ (value) => {
+                                    props.setAttributes({
+                                        borderColor: value
+                                    })
+                                }}
+
+                            />
 
 
                         </PanelRow>
